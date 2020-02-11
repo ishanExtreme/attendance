@@ -69,7 +69,6 @@ pycodestyle==2.5.0
 Pygments==2.5.2
 pylint==2.4.4
 pyparsing==2.4.6
-pypiwin32==223
 pyquery==1.4.1
 python-dateutil==2.8.0
 pytz==2019.3
