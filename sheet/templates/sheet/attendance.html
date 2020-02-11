@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{%load staticfiles%}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/attendance.css' %}">
+<div class="container">
+<h1>Students not present in hostel</h1>
+{%for username in usernames%}
+<h1 style="color: red;">{{username}}</h1>
+{%endfor%}
+</div>
+{% endblock %}

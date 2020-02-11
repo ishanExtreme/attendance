@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{%load staticfiles%}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/signup.css' %}">
+
+{%if error%}
+{{error}}
+<br/>
+<br/>
+{%endif%}
+
+<div class="container">
+    <h1 style="color:#323232">Sign Up</h1>
+    <form method="POST" action="{%url 'signup'%}">
+        {% csrf_token %}
+    <input type="text" placeholder = "Name" name='username' />
+    
+    <input type="password" placeholder = "Password" name='password1' />
+    <input type="password" placeholder = "Confirm Password" name='password2' />
+    <button class="submit" type="submit">Submit</button>
+    </form>
+
+</div>
+{% endblock %}

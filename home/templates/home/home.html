@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{%load staticfiles%}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{%if error%}
+{{error}}
+<br/>
+<br/>
+{%endif%}
+<div>
+    <img src="{%static 'siteimg/logo.png'%}" class="center"   />
+
+</div>
+<div class="box" >
+    <span class="top"></span>
+    <span class="right"></span>
+    <span class="left"></span>
+    <span class="bottom"></span>
+    <button><a href="{%url 'mark'%}">Mark Attendance</a></button>
+</div>
+{% endblock %}

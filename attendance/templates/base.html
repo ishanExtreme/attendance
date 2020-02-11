@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+{%load staticfiles%}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Attendance</title>
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+    
+ 
+</head>
+<body>
+  <header>
+<nav>
+    <ul>
+      {%if user.is_authenticated%}
+      <li>
+        <a href="{%url 'home'%}">Home</a>
+      </li>
+      <li>
+        <a href="javascript:{document.getElementById('logout').submit()}">Logout</a>
+      </li>
+      <li>
+        <a href="{%url 'attendance'%}">Attendance</a>
+      </li>
+      <form id='logout' method="POST" action="{%url 'signout'%}">
+        {% csrf_token %}
+        <input type="hidden"/>
+
+      </form>
+     
+      {%else%}
+      <li>
+        <a href="{%url 'home'%}">Home</a>
+      </li>
+      <li>
+        <a href="{%url 'signin'%}">Login</a>
+      </li>
+      <li>
+        <a href="{%url 'signup'%}">Signup</a>
+      </li>
+      <li>
+        <a href="{%url 'attendance'%}">Attendance</a>
+      </li>
+      {%endif%}
+
+    </ul>
+  </nav>
+
+</header>
+<div>
+  {% block content %}
+  {%endblock%}
+</div>    
+</html>
