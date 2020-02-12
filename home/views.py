@@ -23,10 +23,15 @@ def mark(request):
     # ip = get('https://api.ipify.org').text
     logger = logging.getLogger(__name__)
 
-    ip =request.ipinfo.ip
-    logger.error(ip)
-    logger.error(request.ipinfo.latitude)
-    logger.error(request.ipinfo.longitude)
+#     ip =request.ipinfo.ip
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+
+    if x_forwarded_for:
+        ip = x_forwarded_for.split(',')[0]
+    else:
+        ip = request.META.get('REMOTE_ADDR')
+    
+    
     # access_token = 'f6ea795ded4276'
     # handler = ipinfo.getHandler(access_token)
     # details = handler.getDetails(ip)
