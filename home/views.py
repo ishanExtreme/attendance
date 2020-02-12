@@ -47,7 +47,7 @@ def mark(request):
                 sheet.save()
         return redirect('home')
     else:
-        return render(request,'home/home.html',{'error':ip+" "+details.longitude+" "+details.longitude})
+        return render(request,'home/home.html',{'error':"You are not in the correct location to mark your attendance")
 
     
         
