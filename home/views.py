@@ -37,8 +37,8 @@ def mark(request):
     details = handler.getDetails(ip)
     # print(details.latitude)
     # print(details.longitude)
-    latitude = [20,21,22,23,24,25]
-    longitude = [86,87,88,89,90,91,92,93]
+    latitude = [22,23,24]
+    longitude = [88,89,90,91,92,93]
     if int((details.latitude)[0:(details.latitude).index('.')]) in latitude and int((details.longitude)[0:(details.longitude).index('.')]) in longitude:
         sheets = Sheet.objects.all()
         for sheet in sheets:
