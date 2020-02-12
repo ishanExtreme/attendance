@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.decorators import login_required
-
+import logging
 # from requests import get
 from django.http import HttpResponse
 # import ipinfo
@@ -21,10 +21,12 @@ def reset(request):
 @login_required(login_url="/account/signup")
 def mark(request):
     # ip = get('https://api.ipify.org').text
+    logger = logging.getLogger(__name__)
+
     ip =request.ipinfo.ip
-    
-    print(request.ipinfo.latitude)
-    print(request.ipinfo.longitude)
+    logger.error(ip)
+    logger.error(request.ipinfo.latitude)
+    logger.error(request.ipinfo.longitude)
     # access_token = 'f6ea795ded4276'
     # handler = ipinfo.getHandler(access_token)
     # details = handler.getDetails(ip)
