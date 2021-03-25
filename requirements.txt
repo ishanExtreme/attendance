@@ -75,7 +75,7 @@ pyquery==1.4.1
 python-dateutil==2.8.0
 pytz==2019.3
 
-PyYAML==5.2
+PyYAML==5.4
 pyzmq==18.1.0
 qtconsole==4.6.0
 ratelim==0.1.6
